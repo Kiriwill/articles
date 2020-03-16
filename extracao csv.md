@@ -39,31 +39,5 @@ Para extrair, construiria funções com o papel de filtrar os dados e as organiz
     - por atividade fim (produto);
     - tipo de produto.
             
-Para converter, o serviço receberia os dados da filtragem como parâmetro da função. Através da biblioteca nativa `csv` executaria a conversão.
+Para converção, o serviço receberia os dados da filtragem como parâmetro da função. Através da biblioteca nativa `csv` executaria a conversão. Por fim, os dados seriam gravados no S3 partir sob o caminho *{bucket}/relatorios/{nome_organizacao}/{nome_do_projeto}*. Aqui poderiam ser esbelecidas *triggers* para geração automatica de relatórios CSV a cada 15 dias ou por mês a depender da demanda da organização. O objetivo é guardar a versão dos documentos e evitar múltiplas requisições desnecessárias. 
 
-Por fim os dados seriam gravados no S3 partir sob o caminho *{bucket}/relatorios/{nome_organizacao}/{nome_do_projeto}*. 
-Um novo relatório só é armazenado de 15 em 15 minutos. O objetivo é guardar a versão dos documentos e evitar múltiplas requisições desnecessárias. 
-
-
-
-
-
-
-
-Arquitetura de microserviços com MCV em Django:
-- projeto proprio "Extração relatório CSV"
-- contendo apis:
-    - GET documento: extrai documento Dynamo (servico);
-        - filtros por:
-            - por data (dia, ano, horario);
-            - por autor (pessoa);
-            - por organização;
-            - atividade fim (produto);
-            - keyword (script para gerar esse campo);
-            - qtde produção;
-            - tipo de produto (in natura, artesanal, processado, etc)
-            - preço unitário;
-        - Serializar para objetos Python;
-        - Armazenar em lista;
-    - GET relatorio csv/documento (id): requisita doc (servico) e transforma json em CSV (servico);
-        - importar lib csv nativa;
