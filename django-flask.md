@@ -49,8 +49,6 @@ item.name = "Novo Item 1"
 record.save()
 ```
 
-A primeira diferença é que ele já fornece uma arquitetura da aplicação por meio de comandos como o ```django-admin startproject nomedoprojeto```. Dentro da pasta do projeto é criado um arquivo de migração (migration.py) e outro de modelos (model.py). 
-
-Quando um modelo é modificado Django já rastreia as mudanças e automaticamente migra a nova estrutura para o banco de dados. Isso é executado também pela linha de comando interna como pelo comando ```python3 manage.py migrate```.
+A primeira diferença é que ele já fornece uma arquitetura da aplicação por meio de comandos como o ```django-admin startproject nomedoprojeto```. Dentro da pasta do projeto é criado um arquivo de migração (migration.py) e outro de modelos (model.py). Assim, quando um modelo é modificado o Django rastreia as mudanças e automaticamente migra a nova estrutura para o banco de dados. Isso pode ser executado também pela linha de comando interna como pelo comando ```python3 manage.py migrate```.
  
 
