@@ -1,6 +1,6 @@
 ### Vantagens e desvantagens das promises
 
-Promises são processamentos que podem ser executados no mesmo instante, no futuro ou nunca. São formas de processamento assíncrono que não comprometem o processamento da aplicação. Uma promise pode estar em quatro estados: peding, fulfilled, rejected ou settled.
+Promises são processamentos que podem ser executados no mesmo instante, no futuro ou nunca. São formas de processamento assíncrono que não comprometem o processamento da aplicação. Uma promise pode estar em quatro estados: pending, fulfilled, rejected ou settled.
 
 Elas vêm como resposta a alguns problemas das funções callbacks. Callbacks quando mal escritos tendiam a gerar o que se chama de *callback hell*, isto é, múltiplos aninhamentos de funções callbacks, o que dificultava a leitura do código. Além disso, tornava dificil atribuir o erro a função ao qual pertence. 
 
