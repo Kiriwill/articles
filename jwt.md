@@ -6,4 +6,4 @@ Tokens JWT são credenciais que garantem a segurança e autenticidade de quem o 
 
 Quando gerados a partir de algoritmos HMAC SHA256, os tokens podem ser decodificados e por isso o payload do mesmo não deve conter informações secretas. Em caso de utilização de autorização HSA, chaves privadas devem ser armazenadas em local seguro e preferencialmente com controle de acesso.
 
-Quando utilizados com protocolo OAuth estes token tendem a tornar o processo de autorização longo. Ele exige que o usuário passe por autorização manual de certificação de seu login e senha para então obter o acesso.
+Quando utilizados com protocolo OAuth a criação do token torna o processo de autorização longo. Exige-se que o usuário passe por autorização manual de certificação de seu login e senha para então obter o acesso. Isso pode provocar a evasão do usuário antes que o processo seja completado.
